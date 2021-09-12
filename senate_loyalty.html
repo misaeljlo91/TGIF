@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senate loyalty</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+<!-- Encabezado de la página web-->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid" id="navbar">
+            <a href="index.html"><img src="./assets/logoTGIF.png" alt="Logo TGIF" id="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" id="menu">&equiv;</span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html"><i class="bi bi-house-fill"></i> Home</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-bank2"></i> Congress 113</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="house_congress.html">House</a></li>
+                            <li><a class="dropdown-item" href="senate_congress.html">Senate</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Attendance</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="house_attendance.html">House</a></li>
+                            <li><a class="dropdown-item" href="senate_attendance.html">Senate</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Party loyalty</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="house_loyalty.html">House</a></li>
+                            <li><a class="dropdown-item" href="senate_loyalty.html">Senate</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a id="mail" class="nav-link" href="mailto:info@tgif.net"><i class="bi bi-envelope"></i> info@tgif.net</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!--Contenidos de la página web-->
+    <main class="container-fluid"  id="party">
+        <div id="app">
+            <section class="row">
+                <div class="col">
+                    <h2 class="subtitle">Party loyalty</h2>
+                        <p class="text">Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda.</p>
+                </div>
+                <div class="col">
+                    <h4 class="subtitle">Senate at a glance</h4>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="senateAtt">Party</th>
+                                    <th class="senateAtt">Represents</th>
+                                    <th class="senateAtt">Votes with Party (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="body_name">Democrats</td>
+                                    <td class="body">{{atGlance.democrats.length}}</td>
+                                    <td class="body">{{avoregeGlance.democrats}} %</td>
+                                </tr>
+                                <tr>
+                                    <td class="body_name">Republicans</td>
+                                    <td class="body">{{atGlance.republicans.length}}</td>
+                                    <td class="body">{{avoregeGlance.republicans}} %</td>
+                                </tr>
+                                <tr>
+                                    <td class="body_name">Independents</td>
+                                    <td class="body">{{atGlance.independents.length}}</td>
+                                    <td class="body" v-if="isNaN(avoregeGlance.independents)">0</td>
+                                    <td class="body" v-else>{{avoregeGlance.independents}} %</td>
+                                </tr>
+                                <tr>
+                                    <td class="body_name">Total</td>
+                                    <td class="body">{{atGlance.democrats.length + atGlance.republicans.length + atGlance.independents.length}}</td>
+                                    <td class="body" v-if="isNaN(avoregeGlance.independents)">{{avoregeTotalInd}} %</td>
+                                    <td class="body" v-else>{{avoregeTotal}} %</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    <!-- <div class="loader"><img src="./assets/rippleLoader.svg"></div> -->
+                </div>
+            </section>
+            <section class="row">
+                <div class="col">
+                    <h4 class="subtitle">Least Loyal (Bottom 10% Party)</h4>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="senateAtt">Name</th>
+                                    <th class="senateAtt">Party Votes</th>
+                                    <th class="senateAtt">Party Votes (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="member in leastLoyalty" v-if="leastLoyalty.length > 0">
+                                    <td class="body_name"><a :href="member.url" class="body_name">{{member.first_name}} {{member.middle_name}} {{member.last_name}}</a></td>
+                                    <td class="body">{{member.votes_absolute}}</td>
+                                    <td class="body">{{member.votes_with_party_pct}} %</td>
+                                </tr>
+                                <tr v-else>
+                                    <td colspan="5" class="loader"><img src="./assets/rippleLoader.svg"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>
+                <div class="col">
+                    <h4 class="subtitle">Most Loyal (Top 10% Party)</h4>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="senateAtt">Name</th>
+                                    <th class="senateAtt">Party Votes</th>
+                                    <th class="senateAtt">Party Votes (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="member in mostLoyalty" v-if="mostLoyalty.length > 0">
+                                    <td class="body_name"><a :href="member.url" class="body_name">{{member.first_name}} {{member.middle_name}} {{member.last_name}}</a></td>
+                                    <td class="body">{{member.votes_absolute}}</td>
+                                    <td class="body">{{member.votes_with_party_pct}} %</td>
+                                </tr>
+                                <tr v-else>
+                                    <td colspan="5" class="loader"><img src="./assets/rippleLoader.svg"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!--Pie de la página web-->
+    <footer class="container-fluid">
+        <section class="row">
+            <p class="col" id="footer_copy">&copy; 2016 TGIF</p>
+            <p class="col" id="footer_rights">All Rights Reserved</p>
+        </section>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./scripts/main.js"></script></body>
+</html>

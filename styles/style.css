@@ -1,0 +1,202 @@
+/* Encabezado */
+
+img#logo{
+    padding-top: .5rem;
+    width: 100px;
+    height: 100%;
+}
+div#navbar{
+    height: 8vh;
+}
+nav.navbar{
+    background-color: lightblue;
+    border: 2px solid darkcyan;
+}
+ul.navbar-nav{
+    margin-left: 3rem;
+}
+a.nav-link{
+    color: black;
+}
+a.nav-link:hover:not(#mail){
+    color: black;
+    font-weight: bold;
+}
+a#mail:hover{
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+}
+ul.dropdown-menu{
+    background-color: lightblue;
+    border: 2px solid darkcyan;
+}
+a.dropdown-item:hover{
+    background-color: darkcyan;
+    font-weight: bold;
+}
+button.navbar-toggler{
+    background-color: darkcyan;       
+}
+span#menu{
+    padding-top: .2rem;
+    font-size: x-large;
+}
+span#menu:hover{
+    font-weight: bold;
+}
+
+/* Contenido de la página */
+
+main#index{
+    margin-top: 95px;;
+    padding: 0 3rem 0 3rem;
+    text-align: justify;
+    
+}
+main#party{
+    margin-top: 95px;
+    padding: 0 3rem 0 3rem;
+    text-align: justify;
+}
+h2.subtitle{
+    margin-left: 5vw;
+    border-left: 3px solid darkcyan;
+    padding: 1.5vh 0 1.5vh 0;
+    text-indent: 1.5rem;
+}
+p.text{
+    text-indent: 2.5rem;
+}
+
+/* Contenido de página - Home */
+
+button.accordion-button{
+    font-weight: bold;
+    font-style: italic;
+}
+button.accordion-button:not(.collapsed){
+    color: black;
+}
+button.accordion-button:hover{
+    color: blue;
+    background-color: lightblue;
+}
+
+/* Contenido de página - House, Senate */
+
+h4.textFilter{
+    margin-left: 5vw;
+    margin-bottom: 1rem;
+    border-left: 3px solid darkcyan;
+    padding: 1vh 0 1vh 0;
+    text-indent: 1.5rem;
+}
+section.party{
+    margin-bottom: 1rem;
+}
+label.selectItem{
+    font-weight: bold;
+    text-indent: 2.5rem;
+    margin-right: 1vw;
+}
+input[type=checkbox]#searchD, input[type=checkbox]#searchR, input[type=checkbox]#searchI{
+    margin-left: 2vw;
+}
+select.states{
+    margin-bottom: 2vh;
+}
+input[type=submit].buttonSearch{
+    background-color: lightblue;
+    border: 2px solid darkcyan;
+    padding: 0 1.2vw 0 1.2vw;
+    margin-bottom: 2vh;
+}
+input[type=submit].buttonSearch:hover{
+    background-color: darkcyan;
+    font-weight: bold;
+}
+/* table.table{
+    border: 2px solid darkcyan;
+} */
+thead{
+    background-color: lightblue;
+    border: 2px solid darkcyan;
+}
+th{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1vh 0 1vh 0;
+}
+th.name{
+    border-right: 2px solid darkcyan;
+    width: 10rem;
+}
+th.party{
+    border-right: 2px solid darkcyan;
+    width: 8rem;
+}
+th.state{
+    border-right: 2px solid darkcyan;
+    width: 8rem;
+}
+th.years{
+    border-right: 2px solid darkcyan;
+    width: 12rem;
+}
+th.votes{
+    width: 12rem;
+}
+td.body, td.body_name{
+    padding: 1vh 0 1vh 2vh;
+    border: 2px solid darkcyan;
+    text-align: center;
+}
+td.body_name{
+    text-align: justify;
+}
+a.body_name{
+    text-decoration: none;
+    color: black;
+}
+a.body_name:hover{
+    color: blue;
+    text-decoration: underline;
+}
+td.loader{
+    text-align: center;
+    border: none;
+}
+
+/* Contenido de página - Attendance */
+
+h4.subtitle{
+    margin-left: 5vw;
+    margin-bottom: 1rem;
+    border-left: 3px solid darkcyan;
+    padding: 1vh 0 1vh 0;
+    text-indent: 1.5rem;
+}
+th.houseAtt, th.senateAtt{
+    border-right: 2px solid darkcyan;
+    width: 8rem;
+}
+
+/* Pie de página */
+
+footer.container-fluid{
+    background-color: lightblue;
+    border: 2px solid darkcyan;
+    margin-top: 2vh;
+    padding-top: 2vh;
+    font-weight: bold;
+}
+#footer_copy{
+    border-right: 2px solid;
+    padding: 1.5vh 1vw 1.5vh 0;
+    text-align: right;
+}
+#footer_rights{
+    text-align: left;
+    padding: 1.5vh 0 1.5vh 1vw;
+}
