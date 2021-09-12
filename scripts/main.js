@@ -91,7 +91,8 @@ const app = Vue.createApp({
 
         orderVotes(array, order, property){
             if(order === "DOWN"){
-                return array.sort((a, b) => {
+                return array.filter(member => member.total_votes > 0)
+                .sort((a, b) => {
                     if(a[property] == b[property]){
                         return 0
                     }if(a[property] < b[property]){
@@ -102,7 +103,8 @@ const app = Vue.createApp({
                 .splice(0, this.listMembersPCT) 
             }
             if(order === "UP"){
-                return array.sort((a, b) => {
+                return array.filter(member => member.total_votes > 0)
+                .sort((a, b) => {
                     if(a[property] == b[property]){
                         return 0
                     }
