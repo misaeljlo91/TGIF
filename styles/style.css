@@ -1,16 +1,9 @@
 /* Encabezado */
 
-img#logo{
-    padding-top: .5rem;
-    width: 100px;
-    height: 100%;
-}
-div#navbar{
-    height: 8vh;
-}
 nav.navbar{
     background-color: lightblue;
     border: 2px solid darkcyan;
+    padding: 1.5vh 4vw 1.5vh 4vw;
 }
 ul.navbar-nav{
     margin-left: 3rem;
@@ -48,16 +41,10 @@ span#menu:hover{
 
 /* Contenido de la página */
 
-main#index{
-    margin-top: 95px;;
-    padding: 0 3rem 0 3rem;
+main{
+    margin: 1.5rem 2rem 1.5rem 2rem;
     text-align: justify;
     
-}
-main#party{
-    margin-top: 95px;
-    padding: 0 3rem 0 3rem;
-    text-align: justify;
 }
 h2.subtitle{
     margin-left: 5vw;
@@ -74,13 +61,18 @@ p.text{
 button.accordion-button{
     font-weight: bold;
     font-style: italic;
-}
-button.accordion-button:not(.collapsed){
-    color: black;
+    background-color: lightblue;
 }
 button.accordion-button:hover{
-    color: blue;
+    background-color: darkcyan;
+}
+button.accordion-button:not(.collapsed){
     background-color: lightblue;
+    color: black;
+}
+button.accordion-button:not(.collapsed):hover{
+    background-color: darkcyan;
+    color: black;
 }
 
 /* Contenido de página - House, Senate */

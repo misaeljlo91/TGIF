@@ -11,7 +11,7 @@
 </head>
 <body>
 <!-- Encabezado de la página web-->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container-fluid" id="navbar">
             <a href="index.html"><img src="./assets/logoTGIF.png" alt="Logo TGIF" id="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,13 +26,13 @@
                             <li><a class="dropdown-item" href="senate_congress.html">Senate</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Attendance</a>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list-ul"></i> Attendance</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="house_attendance.html">House</a></li>
                             <li><a class="dropdown-item" href="senate_attendance.html">Senate</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Party loyalty</a>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-star-fill"></i> Party loyalty</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="house_loyalty.html">House</a></li>
                             <li><a class="dropdown-item" href="senate_loyalty.html">Senate</a></li>
@@ -49,14 +49,22 @@
     </nav>
 
 <!--Contenidos de la página web-->
-    <main class="container-fluid" id="index">
-        <section class="clearfix">
-            <img src="./assets/capitolioEEUU.jpg" class="col-md-6 float-md-end mb-1 ms-md-4" id="image_page" alt="Capitolio de EEUU">
-            <h2 class="subtitle">About Us</h2>
-            <p class="text">Openness, accountability, and honesty define government transparency. In a free society, transparency is government's obligation to share information with citizens. It is at the heart of how citizens hold their public officials accountable. Here at TGIF we believe that government should be transparent.</p>  
-            <p class="text">Governments exist to serve the people. Information on how officials conduct the public business and spend taxpayer money must be readily available and easily understood. This transparency allows good and just governance.  Transparency promotes accountability and provides information for citizens about what their Government is doing.</p>  
-            <p class="text">We also believe that government should be participatory. Public engagement enhances the Government's effectiveness and improves the quality of its decisions. Knowledge is widely dispersed in society, and public officials benefit from having access to that dispersed knowledge. We invite you to use our site to become actively engaged in American government.</p>
-            <p class="text">TGIF works to disclose information in forms that the public can readily find and use. We solicit public feedback to identify information of greatest use to the public.</p>
+    <main>
+        <section class="container-fluid">
+            <div class="row">
+                <div class="colcol-sm-6 col-md-6">
+                    <h2 class="subtitle">About Us</h2>
+                    <p class="text">Openness, accountability, and honesty define government transparency. In a free society, transparency is government's obligation to share information with citizens. It is at the heart of how citizens hold their public officials accountable. Here at TGIF we believe that government should be transparent.</p>  
+                    <p class="text">Governments exist to serve the people. Information on how officials conduct the public business and spend taxpayer money must be readily available and easily understood. This transparency allows good and just governance.  Transparency promotes accountability and provides information for citizens about what their Government is doing.</p>  
+                    <p class="text">We also believe that government should be participatory. Public engagement enhances the Government's effectiveness and improves the quality of its decisions. Knowledge is widely dispersed in society, and public officials benefit from having access to that dispersed knowledge. We invite you to use our site to become actively engaged in American government.</p>
+                    <p class="text">TGIF works to disclose information in forms that the public can readily find and use. We solicit public feedback to identify information of greatest use to the public.</p>
+                </div>
+                <div class="colcol-sm-6 col-md-6 align-self-center">
+                    <figure class="figure">
+                        <img src="./assets/capitolioEEUU.jpg" class="figure-img img-fluid rounded" alt="Capitolio de EEUU" id="image_page">
+                    </figure>
+                </div>
+            </div>
         </section>       
         <section class="accordion-flush">
                 <h2 class="accordion-header">
